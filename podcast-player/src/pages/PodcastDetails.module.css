@@ -1,0 +1,214 @@
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  .hero {
+    display: flex;
+    gap: 2rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .cover {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  
+  .info {
+    flex: 1;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+  }
+  
+  
+  .description {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .metaGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .label {
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: #6b7280;
+    margin-bottom: .5rem;
+    letter-spacing: .05em;
+  }
+  
+  .genreContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  
+  .genreTag {
+    background: #f3f4f6;
+    border-radius: 20px;
+    padding: .4rem .9rem;
+    font-size: .85rem;
+  }
+
+  .backButton {
+    border: none;
+    background: black;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+
+    .hero {
+      flex-direction: column;
+    }
+  
+    .cover {
+      width: 100%;
+      height: auto;
+    }
+  
+    .metaGrid {
+      grid-template-columns: 1fr;
+    }
+  
+  }
+
+
+
+  .seasons {
+    margin-top: 3rem;
+  }
+  
+  .seasons h2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .seasonCard {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .seasonCard:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  }
+  
+  .seasonImage {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+
+  .episodeList {
+    margin-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+  }
+  
+  .episodeCard {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .episodeCard:last-child {
+    border-bottom: none;
+  }
+  
+  .episodeCard h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .episodeCard p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .seasonHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .seasonHeader select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .episodeCard {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .episodeImage {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+
+  .episodeCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .episodeInfo {
+    flex: 1;
+  }
+  
+  .episodeTitle {
+    margin: 0 0 0.5rem 0;
+  }
+
+
+  
+  @media (max-width:768px){
+    .seasonCard{
+      flex-direction:column;
+    }
+  
+    .seasonImage{
+      width:100%;
+      height:auto;
+    }
+  }
