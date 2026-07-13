@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import PodcastDetails from "./pages/PodcastDetails";
 import { AudioPlayerProvider } from "./context/AudioPlayerContext";
 import AudioPlayer from "./components/AudioPlayer";
+import { FavouriteProvider } from "./context/FavouriteContext";
+import Favourites from "./pages/Favourites";
 
 
 
@@ -32,23 +34,25 @@ export default function App() {
 
   return (
     <PodcastProvider initialPodcasts={podcasts}>
-      <AudioPlayerProvider>
-
-        <Routes>
-          <Route
-            path="/"
-            element={<Home loading={loading} error={error} />}
-          />
-          <Route
-            path="/show/:id"
-            element={<PodcastDetails />}
-          />
-        </Routes>
-
-        <AudioPlayer /> 
-
-      </AudioPlayerProvider>
-
+      <FavouriteProvider>
+        <AudioPlayerProvider>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home loading={loading} error={error} />}
+            />
+            <Route
+              path="/show/:id"
+              element={<PodcastDetails />}
+            />
+            <Route
+              path="/favourites"
+              element={<Favourites />}
+            />
+          </Routes>
+          <AudioPlayer /> 
+        </AudioPlayerProvider>
+      </FavouriteProvider>
     </PodcastProvider>
   );
 }

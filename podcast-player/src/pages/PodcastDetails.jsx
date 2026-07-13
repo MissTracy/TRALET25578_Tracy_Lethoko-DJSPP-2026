@@ -9,6 +9,8 @@ import { useContext } from "react";
 import { PodcastContext } from "../context/PodcastContext";
 import { genres } from "../data";
 import { AudioPlayerContext } from "../context/AudioPlayerContext";
+import { FavouriteContext } from "../context/FavouriteContext";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 
 
@@ -32,6 +34,10 @@ export default function PodcastDetails() {
     const { playEpisode } = useContext(AudioPlayerContext);
     const [selectedSeasonIndex, setSelectedSeasonIndex] = useState(null);
     const seasonRefs = useRef([]);
+    const {
+      toggleFavourite,
+      isFavourite,
+    } = useContext(FavouriteContext);
  
     /**
      * Fetches the selected podcast from the API whenever the route ID changes.
@@ -239,6 +245,22 @@ export default function PodcastDetails() {
                           >
                             ▶ Play
                         </button>
+                        <button
+                          onClick={() =>
+                            toggleFavourite({
+                              ...episode,
+                              id: `${podcast.id}-${season.season}-${episode.episode}`,
+                              image: season.image,
+                              seasonTitle: season.title,
+                              podcastTitle: podcast.title,
+                            })
+                          }
+                        >
+                          {isFavourite(`${podcast.id}-${season.season}-${episode.episode}`)
+                            ? <FaHeart />
+                            : <FaRegHeart />}
+                        </button>
+                        
                       </div>
                     </div>
                   ))}
