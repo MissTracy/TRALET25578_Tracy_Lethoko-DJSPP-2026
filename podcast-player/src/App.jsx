@@ -4,6 +4,9 @@ import { PodcastProvider } from "./context/PodcastContext";
 import { fetchPodcasts } from "./api/fetchPodcasts";
 import Home from "./pages/Home";
 import PodcastDetails from "./pages/PodcastDetails";
+import { AudioPlayerProvider } from "./context/AudioPlayerContext";
+import AudioPlayer from "./components/AudioPlayer";
+
 
 
 /**
@@ -29,7 +32,7 @@ export default function App() {
 
   return (
     <PodcastProvider initialPodcasts={podcasts}>
-      {/* <AudioPlayerProvider> */}
+      <AudioPlayerProvider>
 
         <Routes>
           <Route
@@ -41,7 +44,10 @@ export default function App() {
             element={<PodcastDetails />}
           />
         </Routes>
-      {/* </AudioPlayerProvider> */}
+
+        <AudioPlayer /> 
+
+      </AudioPlayerProvider>
 
     </PodcastProvider>
   );

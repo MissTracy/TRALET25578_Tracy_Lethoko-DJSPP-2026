@@ -8,6 +8,8 @@ import { formatDate } from "../utils/formatDate";
 import { useContext } from "react";
 import { PodcastContext } from "../context/PodcastContext";
 import { genres } from "../data";
+import { AudioPlayerContext } from "../context/AudioPlayerContext";
+
 
 
 /**
@@ -27,6 +29,7 @@ export default function PodcastDetails() {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { allPodcasts } = useContext(PodcastContext);
+    const { playEpisode } = useContext(AudioPlayerContext);
     const [selectedSeasonIndex, setSelectedSeasonIndex] = useState(null);
     const seasonRefs = useRef([]);
  
@@ -201,14 +204,18 @@ export default function PodcastDetails() {
                   </div>
                 </div>
 
+                
+
               {selectedSeasonIndex === index && (
                 <div className={styles.episodeList}>
                   {season.episodes.map((episode) => (
+                    
                     <div key={episode.episode} className={styles.episodeCard}>
                       <img
                         src={season.image}
                         alt={season.title}
                         className={styles.episodeImage}
+                        
                       />
 
                       <div>
@@ -221,6 +228,11 @@ export default function PodcastDetails() {
                             ? episode.description.slice(0, 150) + "..."
                             : episode.description}
                         </p>
+                        <button
+                            onClick={() => playEpisode(episode)}
+                          >
+                            ▶ Play
+                        </button>
                       </div>
                     </div>
                   ))}
