@@ -1,43 +1,106 @@
 import { useContext } from "react";
 import { AudioPlayerContext } from "../context/AudioPlayerContext";
+import styles from "./AudioPlayer.module.css";
+import {
+    FaPlay,
+    FaPause,
+    FaBackward,
+    FaForward
+
+  } from "react-icons/fa";
 
 export default function AudioPlayer() {
   const {
     currentEpisode,
     isPlaying,
+    
     playEpisode,
     pauseEpisode,
+    
+    currentTime,
+    duration,
+  
+    seek,
+  
   } = useContext(AudioPlayerContext);
 
-  return (
-    <footer
-      style={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        padding: "1rem",
-        background: "#222",
-        color: "#fff",
-      }}
-    >
-      {!currentEpisode ? (
-        <p>No episode selected</p>
-      ) : (
-        <>
-          <h3>{currentEpisode.title}</h3>
+  if (!currentEpisode) return null;
+  function formatTime(seconds) {
 
-          <button
-            onClick={() =>
-              isPlaying
-                ? pauseEpisode()
-                : playEpisode(currentEpisode)
-            }
-          >
-            {isPlaying ? "Pause" : "Play"}
-          </button>
-        </>
-      )}
+    if (!seconds) return "0:00";
+  
+    const mins = Math.floor(seconds / 60);
+  
+    const secs = Math.floor(seconds % 60);
+  
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
+  }
+
+  return (
+    <footer className={styles.player}>
+  
+      {/* Lleft side */}
+      <div className={styles.info}>
+        <img
+          src={currentEpisode.image}
+          alt={currentEpisode.title}
+          className={styles.cover}
+        />
+  
+        <div>
+          <h3>{currentEpisode.title}</h3>
+          <p>{currentEpisode.podcastTitle}</p>
+        </div>
+      </div>
+  
+  
+      {/* buttons */}
+      <div className={styles.controls}>
+  
+        <button className={styles.smallButton}>
+          <FaBackward />
+        </button>
+  
+        <button
+          className={styles.playButton}
+          onClick={() =>
+            isPlaying
+              ? pauseEpisode()
+              : playEpisode(currentEpisode)
+          }
+        >
+          {isPlaying ? <FaPause /> : <FaPlay />}
+        </button>
+  
+        <button className={styles.smallButton}>
+          <FaForward />
+        </button>
+  
+      </div>
+  
+          {/* seek */}
+      <div className={styles.progress}>
+  
+        <span>{formatTime(currentTime)}</span>
+  
+        <input
+          type="range"
+          min="0"
+          max={duration}
+          value={currentTime}
+          onChange={(e) => seek(Number(e.target.value))}
+        />
+  
+        <span>{formatTime(duration)}</span>
+  
+      </div>
+  
+  
+      <div className={styles.volume}>
+        🔊
+      </div>
+  
     </footer>
+  
   );
 }

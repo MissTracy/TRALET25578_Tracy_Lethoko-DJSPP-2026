@@ -229,7 +229,13 @@ export default function PodcastDetails() {
                             : episode.description}
                         </p>
                         <button
-                            onClick={() => playEpisode(episode)}
+                            onClick={() =>
+                              playEpisode({
+                                ...episode,
+                                image: season.image,
+                                podcastTitle: podcast.title,
+                              })
+                            }
                           >
                             ▶ Play
                         </button>
