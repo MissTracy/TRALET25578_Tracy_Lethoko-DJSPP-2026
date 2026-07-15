@@ -1,10 +1,21 @@
-// will store the audio player state.
 
 import { createContext, useEffect, useRef, useState } from "react";
 
+/**
+ * Context for managing audio playback state.
+ */
 export const AudioPlayerContext = createContext();
 
+/**
+ * Provides audio playback functionality to the app.
+ *
+ * @param {{children: React.ReactNode}} props
+ * @returns {JSX.Element}
+ */
 export function AudioPlayerProvider({ children }) {
+  /**
+ * Reference to the HTML audio element.
+ */
   const audioRef = useRef(new Audio());
 
   const [currentEpisode, setCurrentEpisode] = useState(null);
@@ -13,7 +24,9 @@ export function AudioPlayerProvider({ children }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
-
+  /**
+ * Loads a new episode when the current episode changes.
+ */
   useEffect(() => {
     const audio = audioRef.current;
   
@@ -35,7 +48,11 @@ export function AudioPlayerProvider({ children }) {
   }, []);
 
 
-
+  /**
+ * Plays the selected podcast episode.
+ *
+ * @param {Object} episode - Episode to play.
+ */
   function playEpisode(episode) {
     if (audioRef.current.src !== episode.file) {
       audioRef.current.src = episode.file;

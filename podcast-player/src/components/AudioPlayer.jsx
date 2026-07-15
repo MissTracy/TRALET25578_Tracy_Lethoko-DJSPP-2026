@@ -1,14 +1,17 @@
 import { useContext } from "react";
 import { AudioPlayerContext } from "../context/AudioPlayerContext";
 import styles from "./AudioPlayer.module.css";
-import {
-    FaPlay,
-    FaPause,
-    FaBackward,
-    FaForward
-
-  } from "react-icons/fa";
-
+import { FaPlay, FaPause, FaBackward, FaForward } from "react-icons/fa";
+/**
+ * AudioPlayer Component
+ *
+ * Displays a persistent audio player at the bottom of the application.
+ * The player shows the currently selected episode, allows the user to
+ * play or pause playback, seek through the episode using a progress bar,
+ * and displays the current playback time and total duration.
+ *
+ * @returns {JSX.Element|null}
+ */
 export default function AudioPlayer() {
   const {
     currentEpisode,

@@ -16,10 +16,10 @@ import { FaHeart } from "react-icons/fa";
 /**
  * Displays detailed information about a selected podcast.
  *
- * Fetches the podcast by its ID from the API and displays its metadata,
- * genres, seasons, and episodes. Users can navigate back, select a season
- * using the dropdown or by clicking a season card, and expand a season to
- * view its episodes.
+ * Fetches the selected podcast from the API and displays its
+ * metadata, genres, seasons, and episodes. Users can browse
+ * seasons, view episode information, play episodes, and add
+ * or remove episodes from their favourites.
  *
  * @returns {JSX.Element} The podcast details page.
  */

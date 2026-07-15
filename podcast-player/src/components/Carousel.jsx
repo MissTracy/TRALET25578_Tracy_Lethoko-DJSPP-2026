@@ -5,10 +5,22 @@ import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./Carousel.module.css";
 
+
+/**
+ * Displays a carousel of recommended podcasts.
+ *
+ * Shows four podcasts at a time with automatic
+ * and manual navigation.
+ *
+ * @returns {JSX.Element}
+ */
 export default function Carousel() {
   const { allPodcasts } = useContext(PodcastContext);
 
-  // Randomize recommendations once using Fisher-Yates shuffle
+  /**
+ * Randomly shuffles podcasts using the
+ * Fisher-Yates algorithm and selects 10.
+ */
   const recommendations = useMemo(() => {
     const shuffled = [...allPodcasts];
 
@@ -29,11 +41,15 @@ export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
   const visibleCards = 4;
-
+  
+  //Moves to the next carousel item
   function next() {
     setCurrent((prev) => (prev + 1) % recommendations.length);
   }
+  
 
+
+  //Moves to the previous carousel item
   function previous() {
     setCurrent((prev) =>
       prev === 0
@@ -42,6 +58,8 @@ export default function Carousel() {
     );
   }
 
+    // Movevs carousel every 3 seconds.
+ 
     useEffect(() => {
     if (!recommendations.length) return;
   

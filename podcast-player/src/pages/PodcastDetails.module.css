@@ -4,9 +4,7 @@
   padding: 0 1.5rem;
 }
 
-/* =========================
-   HERO
-========================= */
+/* cover */
 
 .hero {
   display: flex;
@@ -80,9 +78,7 @@
   cursor: pointer;
 }
 
-/* =========================
-   SEASONS
-========================= */
+/* seasons */
 
 .seasons {
   margin-top: 3rem;
@@ -129,9 +125,7 @@
   border-radius: 10px;
 }
 
-/* =========================
-   EPISODES
-========================= */
+/* episodes */
 
 .episodeList {
   margin-top: 1rem;
@@ -188,9 +182,7 @@
   line-height: 1.6;
 }
 
-/* =========================
-   HEART
-========================= */
+/* heart */
 
 .heartButton {
   display: flex;
@@ -225,9 +217,7 @@
   color: #9ca3af;
 }
 
-/* =========================
-   PLAY BUTTON
-========================= */
+/* play */
 
 .playContainer {
   display: flex;
@@ -270,9 +260,7 @@
     border-color .3s ease;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 
 @media (max-width:768px) {
 

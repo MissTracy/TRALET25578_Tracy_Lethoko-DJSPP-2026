@@ -19,6 +19,12 @@ const TITLE_SORT_OPTIONS = [
   },
 ];
 
+
+/**
+ * Displays the user's saved favourite podcast episodes.
+ *
+ * @returns {JSX.Element}
+ */
 export default function Favourites() {
 //   const { favourites } = useContext(FavouriteContext);
 
@@ -31,14 +37,20 @@ export default function Favourites() {
     const { favourites, toggleFavourite } =
     useContext(FavouriteContext);
   
-
+  /**
+ * Expands or collapses a podcast's episode list.
+ *
+ * @param {string} podcastTitle - Podcast title.
+ */
   function toggleShow(showTitle) {
     setExpandedShows((prev) => ({
       ...prev,
       [showTitle]: !prev[showTitle],
     }));
   }
-
+  /**
+ * Groups favourite episodes by podcast title.
+ */
   const groupedFavourites = useMemo(() => {
     const groups = {};
 
@@ -165,6 +177,9 @@ export default function Favourites() {
                         <button
                           type="button"
                           className={styles.heartButton}
+                          /**
+                         * Removes an episode from favourites.
+                         */
                           onClick={() => toggleFavourite(episode)}
                         >
                           <FaHeart data-favourite="true" />
