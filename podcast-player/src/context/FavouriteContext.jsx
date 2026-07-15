@@ -3,7 +3,6 @@ import { createContext, useEffect, useState } from "react";
 export const FavouriteContext = createContext();
 
 export function FavouriteProvider({ children }) {
-
   const [favourites, setFavourites] = useState(() => {
     const saved = localStorage.getItem("favourites");
     return saved ? JSON.parse(saved) : [];
@@ -17,7 +16,6 @@ export function FavouriteProvider({ children }) {
   }, [favourites]);
 
   function toggleFavourite(episode) {
-
     const exists = favourites.some(
       (fav) => fav.id === episode.id
     );

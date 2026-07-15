@@ -1,0 +1,222 @@
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.subtitle {
+  color: var(--secondary-text);
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   PODCAST GROUP
+========================= */
+
+.group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.cover {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.groupInfo {
+  flex: 1;
+}
+
+.groupInfo h2 {
+  margin-bottom: .4rem;
+}
+
+.groupInfo p {
+  color: var(--secondary-text);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.toggleButton {
+  padding: .75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--button);
+  color: var(--button-text);
+  font-weight: 600;
+}
+
+.toggleButton:hover {
+  opacity: .9;
+}
+
+/* =========================
+   EPISODES
+========================= */
+
+.episodeList {
+  border-top: 1px solid var(--border);
+}
+
+.episodeCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  padding: 1rem;
+
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.episodeCard:last-child {
+  border-bottom: none;
+}
+
+/* FIXES IMAGE SIZE */
+
+.episodeImage {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+
+.episodeContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.episodeTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .75rem;
+}
+
+.episodeInfo h3 {
+  margin: 0 0 .5rem;
+  color: var(--text);
+}
+
+.episodeInfo p {
+  margin: .3rem 0;
+}
+
+.episodeMeta,
+.date {
+  color: var(--secondary-text);
+  font-size: .9rem;
+}
+
+/* =========================
+   HEART
+========================= */
+
+.heartButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+}
+
+.heartButton svg {
+  font-size: 1.3rem;
+  color: crimson;
+  transition: transform .2s;
+}
+
+.heartButton:hover svg {
+  transform: scale(1.1);
+}
+
+/* =========================
+   PLAY BUTTON
+========================= */
+
+.episodeBottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.playButton {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .6rem 1rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--button);
+  color: var(--button-text);
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.playButton:hover {
+  opacity: .9;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .groupHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .episodeCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .episodeImage {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+  }
+}

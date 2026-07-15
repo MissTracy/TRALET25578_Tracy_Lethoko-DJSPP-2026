@@ -8,6 +8,7 @@ import { AudioPlayerProvider } from "./context/AudioPlayerContext";
 import AudioPlayer from "./components/AudioPlayer";
 import { FavouriteProvider } from "./context/FavouriteContext";
 import Favourites from "./pages/Favourites";
+import Header from "./components/Header";
 
 
 
@@ -36,6 +37,7 @@ export default function App() {
     <PodcastProvider initialPodcasts={podcasts}>
       <FavouriteProvider>
         <AudioPlayerProvider>
+        <Header />
           <Routes>
             <Route
               path="/"

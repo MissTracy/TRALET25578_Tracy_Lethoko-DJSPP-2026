@@ -2,12 +2,16 @@
 
 import styles from "../App.module.css";
 import { genres } from "../data";
-import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import SortSelect from "../components/SortSelect";
 import GenreFilter from "../components/GenreFilter";
 import PodcastGrid from "../components/PodcastGrid";
 import Pagination from "../components/Pagination";
+import { useContext } from "react";
+import {
+  PodcastContext,
+  SORT_OPTIONS,
+} from "../context/PodcastContext";
 
 /**
  * Home page component.
@@ -20,15 +24,20 @@ import Pagination from "../components/Pagination";
  */
 export default function Home({ loading, error })  {
 
+  const { sortKey, setSortKey } =
+  useContext(PodcastContext);
+
   return (
     <>
-      <Header />
-
         <main className={styles.main}>
           <section className={styles.controls}>
             <SearchBar />
             <GenreFilter genres={genres} />
-            <SortSelect />
+            <SortSelect
+              value={sortKey}
+              onChange={setSortKey}
+              options={SORT_OPTIONS}
+            />
           </section>
 
           {loading && (

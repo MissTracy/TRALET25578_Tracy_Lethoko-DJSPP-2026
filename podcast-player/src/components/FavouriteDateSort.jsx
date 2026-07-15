@@ -1,17 +1,23 @@
 import styles from "./SortSelect.module.css";
 
+const DATE_OPTIONS = [
+  {
+    key: "newest",
+    label: "Newest Added",
+  },
+  {
+    key: "oldest",
+    label: "Oldest Added",
+  },
+];
+
 /**
- * Generic sort dropdown component.
- *
- * @param {Object} props
- * @param {string} props.value - Selected sort option.
- * @param {Function} props.onChange - Updates the selected sort option.
- * @param {Array} props.options - List of sort options.
+ * Dropdown for sorting favourites by the date
+ * they were added.
  */
-export default function SortSelect({
+export default function FavouriteDateSort({
   value,
   onChange,
-  options,
 }) {
   return (
     <select
@@ -19,7 +25,7 @@ export default function SortSelect({
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
-      {options.map((option) => (
+      {DATE_OPTIONS.map((option) => (
         <option
           key={option.key}
           value={option.key}

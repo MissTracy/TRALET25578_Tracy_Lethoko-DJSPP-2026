@@ -10,8 +10,7 @@ import { PodcastContext } from "../context/PodcastContext";
 import { genres } from "../data";
 import { AudioPlayerContext } from "../context/AudioPlayerContext";
 import { FavouriteContext } from "../context/FavouriteContext";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-
+import { FaHeart } from "react-icons/fa";
 
 
 /**
@@ -209,43 +208,29 @@ export default function PodcastDetails() {
                     <p>{season.episodes.length} Episodes</p>
                   </div>
                 </div>
+    
 
-                
+                {selectedSeasonIndex === index && (
+              <div className={styles.episodeList}>
+                {season.episodes.map((episode) => (
+                  <div
+                    key={episode.episode}
+                    className={styles.episodeCard}
+                  >
+                    <img
+                      src={season.image}
+                      alt={season.title}
+                      className={styles.episodeImage}
+                    />
 
-              {selectedSeasonIndex === index && (
-                <div className={styles.episodeList}>
-                  {season.episodes.map((episode) => (
-                    
-                    <div key={episode.episode} className={styles.episodeCard}>
-                      <img
-                        src={season.image}
-                        alt={season.title}
-                        className={styles.episodeImage}
-                        
-                      />
-
-                      <div>
-                        <h4  className={styles.episodeTitle}>
+                    <div className={styles.episodeContent}>
+                      <div className={styles.episodeHeader}>
+                        <h4 className={styles.episodeTitle}>
                           Episode {episode.episode}: {episode.title}
                         </h4>
-                        {/* Display a short description*/}
-                        <p>
-                          {episode.description.length > 150
-                            ? episode.description.slice(0, 150) + "..."
-                            : episode.description}
-                        </p>
+
                         <button
-                            onClick={() =>
-                              playEpisode({
-                                ...episode,
-                                image: season.image,
-                                podcastTitle: podcast.title,
-                              })
-                            }
-                          >
-                            ▶ Play
-                        </button>
-                        <button
+                          className={styles.heartButton}
                           onClick={() =>
                             toggleFavourite({
                               ...episode,
@@ -253,23 +238,53 @@ export default function PodcastDetails() {
                               image: season.image,
                               seasonTitle: season.title,
                               podcastTitle: podcast.title,
+                              seasonNumber: season.season,
+                              episodeNumber: episode.episode,
+                              addedAt: new Date().toISOString(),
                             })
                           }
                         >
-                          {isFavourite(`${podcast.id}-${season.season}-${episode.episode}`)
-                            ? <FaHeart />
-                            : <FaRegHeart />}
+                        <FaHeart
+                        data-favourite={
+                          isFavourite(
+                            `${podcast.id}-${season.season}-${episode.episode}`
+                          )
+                        }
+                      />
+                      </button>
+                      </div>
+
+                      <p>
+                        {episode.description.length > 150
+                          ? episode.description.slice(0, 150) + "..."
+                          : episode.description}
+                      </p>
+
+                      <div className={styles.playContainer}>
+                        <button
+                          className={styles.playButton}
+                          onClick={() =>
+                            playEpisode({
+                              ...episode,
+                              image: season.image,
+                              podcastTitle: podcast.title,
+                              seasonTitle: season.title,
+                              seasonNumber: season.season,
+                              episodeNumber: episode.episode,
+                            })
+                          }
+                        >
+                          ▶ Play
                         </button>
-                        
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </section>
-                         
-        </main>
-      );
-}
+                  </div>
+                ))}
+              </div>
+            )}
+                  </div>
+                ))}
+              </section>
+            </main>
+            );
+            }
