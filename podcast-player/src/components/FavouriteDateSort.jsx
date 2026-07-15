@@ -12,8 +12,12 @@ const DATE_OPTIONS = [
 ];
 
 /**
- * Dropdown for sorting favourites by the date
- * they were added.
+ * Renders a dropdown for sorting favourites.
+ *
+ * @param {Object} props
+ * @param {string} props.value - Selected sort option.
+ * @param {Function} props.onChange - Updates the selected option.
+ * @returns {JSX.Element}
  */
 export default function FavouriteDateSort({
   value,

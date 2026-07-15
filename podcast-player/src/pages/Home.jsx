@@ -17,7 +17,7 @@ import Carousel from "../components/Carousel";
 /**
  * Home page component.
  *
- * Displays the podcast catalogue along with search, sorting,
+ * Displays the podcast catalogue along with carousel, search, sorting,
  * filtering, pagination, and loading/error states.
  *
  * @param {{loading: boolean, error: string | null}} props
