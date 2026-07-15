@@ -1,18 +1,39 @@
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className={styles.appHeader}>
-      <h1>🎙️ Podcast App</h1>
-    
+
+      <div className={styles.header}>
+        <h1>🎙️ Podcast App</h1>
+      </div>
+
       <nav className={styles.nav}>
-        <Link to="/">Home</Link>
-        <Link to="/favourites">Favourites</Link>
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) =>
+            isActive ? styles.active : ""
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/favourites"
+          className={({ isActive }) =>
+            isActive ? styles.active : ""
+          }
+        >
+          Favourites
+        </NavLink>
       </nav>
-      <ThemeToggle />
-      <div className={styles.spacer}></div>
+
+      <div className={styles.rightSide}>
+        <ThemeToggle />
+      </div>
 
     </header>
   );

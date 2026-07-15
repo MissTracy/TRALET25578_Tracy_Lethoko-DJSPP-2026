@@ -15,9 +15,7 @@
   margin-bottom: 2rem;
 }
 
-/* =========================
-   PODCAST GROUP
-========================= */
+/* padcast group */
 
 .group {
   background: var(--surface);
@@ -55,9 +53,7 @@
   color: var(--secondary-text);
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* buttons */
 
 .toggleButton {
   padding: .75rem 1rem;
@@ -73,9 +69,7 @@
   opacity: .9;
 }
 
-/* =========================
-   EPISODES
-========================= */
+/* episodes */
 
 .episodeList {
   border-top: 1px solid var(--border);
@@ -96,7 +90,6 @@
   border-bottom: none;
 }
 
-/* FIXES IMAGE SIZE */
 
 .episodeImage {
   width: 80px;
@@ -137,9 +130,7 @@
   font-size: .9rem;
 }
 
-/* =========================
-   HEART
-========================= */
+/* heart */
 
 .heartButton {
   border: none;
@@ -166,9 +157,7 @@
   transform: scale(1.1);
 }
 
-/* =========================
-   PLAY BUTTON
-========================= */
+/* play button */
 
 .episodeBottom {
   display: flex;
@@ -198,9 +187,6 @@
   opacity: .9;
 }
 
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 

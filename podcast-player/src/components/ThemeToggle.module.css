@@ -1,6 +1,6 @@
 .themeButton {
     border: none;
-    /* background: #111827; */
+    background: none;
     color: rgb(255, 217, 29);
     width: 45px;
     height: 45px;
@@ -13,6 +13,6 @@
   }
   
   body.dark .themeButton {
-    background: white;
+    background: orange;
     color: #111827;
   }

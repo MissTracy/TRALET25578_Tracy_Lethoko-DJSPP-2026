@@ -12,6 +12,7 @@ import {
   PodcastContext,
   SORT_OPTIONS,
 } from "../context/PodcastContext";
+import Carousel from "../components/Carousel";
 
 /**
  * Home page component.
@@ -30,8 +31,9 @@ export default function Home({ loading, error })  {
   return (
     <>
         <main className={styles.main}>
+        <Carousel />
           <section className={styles.controls}>
-            <SearchBar />
+            <SearchBar /> 
             <GenreFilter genres={genres} />
             <SortSelect
               value={sortKey}
