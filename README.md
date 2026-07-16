@@ -1,104 +1,176 @@
-# 🎧 DJS Portfolio Piece – Podcast App (React)
+# 🎙️ Podcast App
 
-## 📋 Overview
+A modern podcast discovery application built with **React** and **Vite**.
 
-In this final phase, you will enhance the podcast app you've been building throughout the DJS course. The app already includes a landing page with searchable, sortable, and filterable podcast previews, as well as a show detail page with season toggling.
-
-This project introduces key new features including global audio playback, favouriting episodes, deployment best practices, UI enhancements, and optional listening progress tracking.
-
-Your goal is to build a polished, production-ready React application that offers an engaging and seamless user experience.
-
-> **Tip:** You are encouraged to explore the React ecosystem to help implement features efficiently.
-
-## 🎯 Objectives
-
-- Implement a global audio player with full playback control
-- Add support for favouriting episodes with persistent storage
-- Introduce a recommended shows carousel on the landing page
-- Support theme toggling (light/dark mode)
-- Ensure robust routing and deploy the app with professional polish
-- Optionally track listening progress across episodes and sessions
-
-## 🚀 Core Features & User Stories
-
-### 🛠️ Setup and Deployment
-
-- Deploy your app to **Vercel** using a **custom domain or URL**
-- Add a **custom favicon** for easy identification in browser tabs
-- Use tools like [metatags.io](https://metatags.io) to set **rich social media preview metadata**
-- Ensure that direct access to dynamic routes (e.g. `/show/1`) works correctly (SPA routing fallback)
-
-### 🔊 Global Audio Player
-
-- Play audio using the provided **placeholder API**
-- Keep the player **fixed at the bottom** of the screen across all pages
-- Ensure **uninterrupted playback** when navigating between pages
-- Provide **play, pause, seek, and progress tracking**
-- Add a **confirmation prompt** on page reloads during playback
-
-### ❤️ Favourites
-
-- Allow users to **favourite or unfavourite episodes** via a button/icon
-- Use **localStorage** to persist favourites across sessions
-- Provide **visual feedback** for favourited items (e.g., filled heart)
-- Create a **favourites page** displaying all saved episodes
-- Display **associated show and season** for each favourite
-- Show the **date/time added** to favourites
-- **Group favourites by show title**
-- Add **sorting options**:
-  - A–Z / Z–A by title
-  - Newest / Oldest by date added
-
-### 🎠 Recommended Shows Carousel
-
-- Add a **horizontally scrollable carousel** to the landing page
-- Show each show’s **image, title, and genre tags**
-- Support **looping** and navigation via **swipe or arrows**
-- Clicking a carousel item should navigate to the **show’s detail page**
-
-### 🌗 Theme Toggle
-
-- Include a **toggle** for switching between light and dark mode
-- **Persist theme selection** using `localStorage`
-- Ensure the **entire app UI updates smoothly**
-- Use **appropriate icons** (e.g., sun/moon) to indicate current theme
-- Reflect selected theme across all views and components
-
-## 🌟 Stretch Goal – Listening Progress (Optional)
-
-- Save playback position per episode and **resume playback**
-- Mark episodes as **"finished"** once fully played
-- Display **progress indicators** for episodes in progress
-- Allow users to **reset listening history**
-- Save listening history in local storage
-
-## ✅ Deliverables
-
-- A fully functional and deployed podcast app
-- Source code in **GitHub** with clear commit history
-- Live demo link (**Vercel**)
-- (Optional) Short demo video
-
-## 💡 Tips
-
-- Prioritise **user experience** and **clean component structure**
-- Use **React best practices** (components, hooks, state management)
-- Ensure the app is **responsive** and **mobile-friendly**
-- Test localStorage and audio persistence thoroughly
-- Make use of the **React ecosystem** to accelerate development!
+The application allows users to browse podcasts, search and filter by genre, sort shows, view detailed podcast information, play episode previews, save favourite episodes, switch between light and dark themes, and discover new podcasts through a recommended shows carousel.
 
 ---
 
-## 🧑‍⚖️ Panel Review
+# Features
 
-After submitting your project, you will be required to present your work to a coach or panel of coaches.
+## Home Page
 
-During this session, you must:
+- Browse all available podcasts
+- Search podcasts by title
+- Filter podcasts by genre
+- Sort podcasts by:
+  - Newest
+  - Oldest
+  - Title A–Z
+  - Title Z–A
+- Responsive podcast grid
+- Pagination
 
-- **Demonstrate** all the features you have implemented in your application.
-- **Explain** how each feature was built, referring directly to your code (e.g., components, state, hooks, storage).
-- Discuss the **decisions** you made during development (e.g., choice of libraries, structure, naming conventions).
-- Break down the **logic** behind key functionalities (e.g., how audio persistence or favouriting works).
-- Be prepared to answer **questions** from the coaches about your project, code structure, and implementation choices.
+## Podcast Details
 
-This is your opportunity to showcase both your technical and problem-solving skills—treat it like a real-world project revsiew.
+- View complete podcast information
+- Genre tags
+- Number of seasons
+- Number of episodes
+- Last updated date
+- Expand seasons
+- View episodes
+- Play episode previews
+- Favourite episodes
+
+## Audio Player
+
+- Persistent audio player
+- Play / Pause controls
+- Seek bar
+- Episode information
+- Playback timer
+
+## Favourites
+
+- Save favourite episodes
+- Remove favourites
+- Sort favourites by date added
+- Group episodes by podcast
+- Expand and collapse saved episodes
+- Resume playback directly from favourites
+
+## Recommended Shows
+
+- Displays recommended podcasts
+- Fisher-Yates shuffle algorithm
+- Infinite looping carousel
+- Previous / Next controls
+- Opens podcast details on click
+
+## Theme Toggle
+
+- Light mode
+- Dark mode
+- Theme preference stored in localStorage
+- Persistent across browser sessions
+
+---
+
+# Technologies Used
+
+- React
+- React Router DOM
+- React Context API
+- React Icons (Imported)
+- Vite
+- JavaScript (ES6)
+- CSS Modules
+- HTML5
+
+---
+
+
+# Installation
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Navigate into the project
+
+```bash
+cd podcast-app
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
+
+```bash
+npm run dev
+```
+
+Open your browser
+
+```
+http://localhost:5173
+```
+
+---
+
+# Usage
+
+### Browse Podcasts
+
+Browse the available podcasts on the Home page.
+
+### Search
+
+Use the search bar to search podcasts by title.
+
+### Filter
+
+Filter podcasts by selecting a genre.
+
+### Sort
+
+Sort podcasts using the dropdown menu.
+
+### View Details
+
+Click any podcast card to open its detail page.
+
+### Play Episodes
+
+Expand a season and click **Play** to start the episode preview.
+
+### Save Favourites
+
+Click the heart icon to save an episode.
+
+### View Favourites
+
+Open the Favourites page to manage saved episodes.
+
+### Change Theme
+
+Click the sun/moon icon in the header to switch between light and dark mode.
+
+---
+
+# State Management
+
+The application uses the React Context API.
+
+Contexts include:
+
+- PodcastContext
+- FavouriteContext
+- AudioPlayerContext
+- ThemeContext
+
+---
+
+# Data Source
+
+Podcast information is provided by  API.
+
+---
+
