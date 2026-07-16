@@ -253,11 +253,11 @@ export default function PodcastDetails() {
                       />
                       </button>
                       </div>
-
+                      console.log(episode);
                       <p>
                         {episode.description.length > 150
                           ? episode.description.slice(0, 150) + "..."
-                          : episode.description}
+                          : episode.description || "No description available."}
                       </p>
 
                       <div className={styles.playContainer}>

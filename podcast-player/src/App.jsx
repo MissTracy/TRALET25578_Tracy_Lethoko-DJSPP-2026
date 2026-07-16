@@ -9,6 +9,9 @@ import AudioPlayer from "./components/AudioPlayer";
 import { FavouriteProvider } from "./context/FavouriteContext";
 import Favourites from "./pages/Favourites";
 import Header from "./components/Header";
+import { ThemeProvider } from "./context/ThemeContext";
+
+
 
 
 
@@ -34,27 +37,30 @@ export default function App() {
   }, []);
 
   return (
-    <PodcastProvider initialPodcasts={podcasts}>
-      <FavouriteProvider>
-        <AudioPlayerProvider>
-        <Header />
-          <Routes>
-            <Route
-              path="/"
-              element={<Home loading={loading} error={error} />}
-            />
-            <Route
-              path="/show/:id"
-              element={<PodcastDetails />}
-            />
-            <Route
-              path="/favourites"
-              element={<Favourites />}
-            />
-          </Routes>
-          <AudioPlayer /> 
-        </AudioPlayerProvider>
-      </FavouriteProvider>
-    </PodcastProvider>
+    <ThemeProvider>
+      <PodcastProvider initialPodcasts={podcasts}>
+        <FavouriteProvider>
+          <AudioPlayerProvider>
+          <Header />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home loading={loading} error={error} />}
+              />
+              <Route
+                path="/show/:id"
+                element={<PodcastDetails />}
+              />
+              <Route
+                path="/favourites"
+                element={<Favourites />}
+              />
+            </Routes>
+            <AudioPlayer /> 
+          </AudioPlayerProvider>
+        </FavouriteProvider>
+      </PodcastProvider>
+    </ThemeProvider>
+
   );
 }
