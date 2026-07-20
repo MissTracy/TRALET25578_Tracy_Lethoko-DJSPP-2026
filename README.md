@@ -2,7 +2,7 @@
 
 A modern podcast discovery application built with **React** and **Vite**.
 
-The application allows users to browse podcasts, search and filter by genre, sort shows, view detailed podcast information, play episode previews, save favourite episodes, switch between light and dark themes, and discover new podcasts through a recommended shows carousel.
+The application allows users to browse podcasts, search and filter by genre, sort shows, view detailed podcast information, play episode previews, save favourite episodes, switch between light and dark themes, and discover new podcasts through a recommended shows carousel. Application deployed and availbale on https://tralet-25578-tracy-lethoko-djspp-2026-beis-p6bdjd6ew-tracy13.vercel.app/
 
 ---
 
@@ -106,13 +106,6 @@ Start the development server
 ```bash
 npm run dev
 ```
-
-Open your browser
-
-```
-http://localhost:5173
-```
-
 ---
 
 # Usage
