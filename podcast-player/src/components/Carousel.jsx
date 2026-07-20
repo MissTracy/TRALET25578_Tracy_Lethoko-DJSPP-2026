@@ -65,7 +65,7 @@ export default function Carousel() {
   
     const timer = setInterval(() => {
       next();
-    }, 3000);
+    }, 4200);
   
     return () => clearInterval(timer);
   }, [recommendations.length]);
